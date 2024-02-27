@@ -30,6 +30,7 @@ int main()
 
     int readCount = read(fd, buffer, sizeof(buffer));
     while(readCount > 0) {
+        lseek(fd2, 10, SEEK_SET);
         write(fd2, buffer, readCount);
         readCount = read(fd, buffer, sizeof(buffer));
     }
