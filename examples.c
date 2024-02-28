@@ -7,6 +7,18 @@ void getinput_with_fgets() {
     printf("%s\n", firstname);
 }
 
+int readln(char s[], int maxlen) {
+    int len_s;
+    fgets(s, maxlen, stdin);
+    len_s = strlen(s);
+    if (s[len_s - 1] == '\n') {
+        s[len_s - 1] = '\0';
+        len_s -= 1;
+    }
+    rewind(stdin);
+    return len_s;
+}
+
 int main(int argc, char **argv) {
     // #define PI 3.14
     // const double pettycash = 0.2;
